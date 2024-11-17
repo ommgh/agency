@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import localFont from "next/font/local";
+import Services from "@/app/services";
 
 const coolVeticaRegular = localFont({
   src: "./fonts/Coolvetica-Regular.ttf",
@@ -19,26 +20,32 @@ export default function Component() {
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between">
         <Link href="/" className={`text-5xl ${brochilloRegular.className}`}>
-          won
+          sync
         </Link>
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/work" className="hover:text-gray-300 transition-colors">
+          <Link
+            href="/work"
+            className={`hover:text-gray-300 transition-colors text-lg ${coolVeticaRegular.className}`}
+          >
             Work
           </Link>
           <Link
             href="/insights"
-            className="hover:text-gray-300 transition-colors"
+            className={`hover:text-gray-300 transition-colors text-lg ${coolVeticaRegular.className}`}
           >
             Insights
           </Link>
-          <Link href="/about" className="hover:text-gray-300 transition-colors">
+          <Link
+            href="/about"
+            className={`hover:text-gray-300 transition-colors text-lg ${coolVeticaRegular.className}`}
+          >
             About
           </Link>
         </div>
         <div className="flex items-center gap-4">
           <Link
             href="/consultation"
-            className="hidden md:inline-block rounded-full bg-white text-black px-6 py-2 font-medium hover:bg-gray-100 transition-colors"
+            className={`hidden md:inline-block rounded-full bg-white text-black px-6 py-2 hover:bg-gray-100 transition-colors ${coolVeticaRegular.className}`}
           >
             Free consultation
           </Link>
@@ -76,6 +83,7 @@ export default function Component() {
           <div className="absolute -inset-4 bg-white/20 blur-xl rounded-full -z-10" />
         </div>
       </main>
+      <Services />
     </div>
   );
 }
