@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import localFont from "next/font/local";
 import Services from "@/app/services";
+import Reviews from "./reviews";
 
 const coolVeticaRegular = localFont({
   src: "./fonts/Coolvetica-Regular.ttf",
@@ -84,6 +85,7 @@ export default function Component() {
         </div>
       </main>
       <Services />
+      <Reviews />
     </div>
   );
 }

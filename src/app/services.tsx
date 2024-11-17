@@ -25,7 +25,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="w-full min-h-screen flex flex-col">
+    <div className="w-full h-full flex flex-col">
       <div
         className={`flex items-center justify-center font-semibold text-5xl p-5 ${coolVeticaRegular.className}`}
       >
