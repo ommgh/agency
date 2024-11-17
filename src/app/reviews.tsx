@@ -27,7 +27,7 @@ const reviews: Review[] = [
     image:
       "https://res.cloudinary.com/dcwsgwsfw/image/upload/v1731844271/241117_17h19m02s_screenshot_a34hlq.png",
     content:
-      "Sync Agency delivered a sleek, modern, and highly functional website. Their attention to detail and understanding of our brand needs resulted in a seamless user experience. Their professionalism and innovative design solutions were impressive. They truly excelled in creativity and technical skills.",
+      "Sync Agency delivered a sleek, modern, and highly functional website. Their attention to detail and understanding of our brand needs resulted in a seamless user experience. Their professionalism and innovative design solutions were impressive. They truly excelled in creativity and technical skills",
   },
   {
     author: "Amit Chaudhary",
@@ -36,7 +36,7 @@ const reviews: Review[] = [
     image:
       "https://res.cloudinary.com/dcwsgwsfw/image/upload/v1731844270/241117_17h19m25s_screenshot_icdyo3.png",
     content:
-      "After working with Sync Agency, our mobile application downloads skyrocketed from 2,000 to almost 100,000. The team provided excellent project management and communication throughout the process. We felt that Won Agency created unique and useful designs for our company.",
+      "After working with Sync Agency, our mobile application downloads skyrocketed from 2,000 to almost 100,000. The team provided excellent project management and communication throughout the process. We felt that Won Agency created unique and useful designs for our company",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function Reviews() {
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium mb-4 sm:mb-0">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-0">
             Hear From Our Clients
           </h2>
           <div className="flex gap-4">
@@ -139,7 +139,7 @@ export default function Reviews() {
                   </div>
                 </div>
                 <blockquote className="text-base sm:text-lg md:text-xl leading-relaxed">
-                  "{review.content}"
+                  {review.content}
                 </blockquote>
               </div>
             ))}
