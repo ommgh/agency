@@ -29,7 +29,7 @@ export default function Services() {
       <div
         className={`flex items-center justify-center font-semibold text-5xl p-5 ${coolVeticaRegular.className}`}
       >
-        Here's What We Create
+        Here&apos;s What We Create
       </div>
       <div className="p-5 sm:p-10 border-neutral-100">
         {services.map((service) => (
