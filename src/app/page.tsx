@@ -9,6 +9,7 @@ const coolVeticaRegular = localFont({
   display: "swap",
   variable: "--font-cool-reg",
 });
+
 const brochilloRegular = localFont({
   src: "./fonts/BrohilloRegular.ttf",
   display: "swap",

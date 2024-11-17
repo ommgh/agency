@@ -36,7 +36,7 @@ const reviews: Review[] = [
     image:
       "https://res.cloudinary.com/dcwsgwsfw/image/upload/v1731844270/241117_17h19m25s_screenshot_icdyo3.png",
     content:
-      "After working with Sync Agency, our mobile application downloads skyrocketed from 2,000 to almost 100,000. The team provided excellent project management and communication throughout the process. We felt that Won Agency created unique and useful designs for our company",
+      "After working with Sync Agency, our mobile application downloads skyrocketed from 2,000 to almost 100,000. The team provided excellent project management and communication throughout the process. We felt that Sync Agency created unique and useful designs for our company",
   },
 ];
 
