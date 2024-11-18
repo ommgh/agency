@@ -1,0 +1,39 @@
+import localFont from "next/font/local";
+import Link from "next/link";
+import React from "react";
+const coolVeticaRegular = localFont({
+  src: "./fonts/Coolvetica-Regular.ttf",
+  display: "swap",
+  variable: "--font-cool-reg",
+});
+
+export default function Hero() {
+  return (
+    <main className="container mx-auto px-4 pt-12 md:pt-24 pb-16 text-center">
+      <div
+        className={`inline-block px-4 md:px-6 py-2 mb-8  md:mb-16 rounded-full border border-gray-800 text-xs md:text-sm lg:text-xl tracking-wide ${coolVeticaRegular.className}`}
+      >
+        YOUR EXTERNAL IN-HOUSE TECH TEAM
+      </div>
+
+      <h1
+        className={`text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold mb-6 md:mb-8 lg:max-w-[18ch] mx-auto tracking-wide ${coolVeticaRegular.className}`}
+      >
+        Tech that scales with your business
+      </h1>
+
+      <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-white mx-auto mb-8 md:mb-16">
+        We create brands and websites backed by data to drive revenue growth.
+      </p>
+
+      <div className="relative inline-block">
+        <Link
+          href="/trial"
+          className="inline-block rounded-full bg-white text-black px-6 md:px-8 py-2 md:py-3 font-medium text-base md:text-lg hover:bg-gray-100 transition-colors relative z-10"
+        >
+          Try a 7 day trial
+        </Link>
+      </div>
+    </main>
+  );
+}
