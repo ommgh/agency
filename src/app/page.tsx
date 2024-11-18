@@ -1,6 +1,8 @@
 import Services from "@/app/services";
 import Reviews from "./reviews";
 import Hero from "./hero";
+import Pricing from "./pricing";
+import CTA from "./cta";
 
 export default function Component() {
   return (
@@ -8,6 +10,8 @@ export default function Component() {
       <Hero />
       <Services />
       <Reviews />
+      <Pricing />
+      <CTA />
     </div>
   );
 }
