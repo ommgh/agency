@@ -35,7 +35,7 @@ export default function Footer() {
 
           {/* Won Agency Links */}
           <div className="md:col-span-3">
-            <h3 className="text-xl font-medium mb-6">Won Agency</h3>
+            <h3 className="text-xl font-medium mb-6">Sync Agency</h3>
             <nav className="space-y-4">
               <Link
                 href="/home"
