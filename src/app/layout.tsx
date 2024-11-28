@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Footer from "./footer";
-import Navbar from "./navbar";
 
 const coolVeticaRegular = localFont({
   src: "./fonts/Coolvetica-Regular.ttf",
@@ -28,11 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${coolVeticaRegular.variable} ${brochilloRegular.variable} antialiased`}
-      >
-        <Navbar />
+        className={`${coolVeticaRegular.variable} ${brochilloRegular.variable} antialiased`}>
         {children}
-        <Footer />
       </body>
     </html>
   );

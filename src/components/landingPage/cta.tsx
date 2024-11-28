@@ -1,13 +1,5 @@
 "use client";
-
 import { useState } from "react";
-import localFont from "next/font/local";
-
-const coolVeticaRegular = localFont({
-  src: "./fonts/Coolvetica-Regular.ttf",
-  display: "swap",
-  variable: "--font-cool-reg",
-});
 
 interface FormData {
   services: string[];
@@ -43,8 +35,8 @@ export default function CTA() {
 
   return (
     <section
-      className={`bg-black text-white py-16 md:py-24 tracking-widest ${coolVeticaRegular.className}`}
-    >
+      style={{ fontFamily: "var(--font-cool-reg)" }}
+      className="bg-black text-white py-16 md:py-24 tracking-widest">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between">
         <h2 className="text-6xl md:text-8xl font-medium mb-16 md:mb-24">
           Let&apos;s
@@ -72,8 +64,7 @@ export default function CTA() {
                     formData.services.includes(service)
                       ? "bg-white text-black"
                       : "bg-zinc-900 text-white hover:bg-zinc-800"
-                  }`}
-                >
+                  }`}>
                   {service}
                 </button>
               ))}
@@ -93,8 +84,7 @@ export default function CTA() {
                     formData.budget === budget
                       ? "bg-white text-black"
                       : "bg-zinc-900 text-white hover:bg-zinc-800"
-                  }`}
-                >
+                  }`}>
                   {budget}
                 </button>
               ))}
@@ -145,8 +135,7 @@ export default function CTA() {
           <div className="flex justify-end">
             <button
               type="submit"
-              className="text-xl hover:text-gray-300 transition-colors"
-            >
+              className="text-xl hover:text-gray-300 transition-colors">
               submit
             </button>
           </div>

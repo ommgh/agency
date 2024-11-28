@@ -2,13 +2,6 @@
 import React, { useState } from "react";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { motion } from "framer-motion";
-import localFont from "next/font/local";
-
-const coolVeticaRegular = localFont({
-  src: "./fonts/Coolvetica-Regular.ttf",
-  display: "swap",
-  variable: "--font-cool-reg",
-});
 
 export default function Services() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -26,8 +19,8 @@ export default function Services() {
 
   return (
     <section
-      className={`bg-black text-white py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider ${coolVeticaRegular.className}`}
-    >
+      style={{ fontFamily: "var(--font-cool-reg)" }}
+      className={`bg-black text-white py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider`}>
       <div className="w-full h-full flex flex-col">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-0 px-10">
           Here&apos;s What We Create
@@ -43,16 +36,15 @@ export default function Services() {
                   backgroundColor:
                     hoveredService === service.id ? "#fff" : "black",
                 }}
-                transition={{ duration: 0.3 }}
-              >
+                transition={{ duration: 0.3 }}>
                 {/* Service Name */}
                 <motion.div
-                  className={`flex font-semibold items-center gap-2 ${coolVeticaRegular.className}`}
+                  style={{ fontFamily: "var(--font-cool-reg)" }}
+                  className={`flex font-semibold items-center gap-2`}
                   animate={{
                     opacity: hoveredService === service.id ? 0 : 1,
                   }}
-                  transition={{ duration: 0.3 }}
-                >
+                  transition={{ duration: 0.3 }}>
                   {service.name}
                 </motion.div>
 
@@ -63,8 +55,7 @@ export default function Services() {
                   animate={{
                     opacity: hoveredService === service.id ? 1 : 0,
                   }}
-                  transition={{ duration: 0.3 }}
-                >
+                  transition={{ duration: 0.3 }}>
                   <div className="flex items-center gap-2 text-black dark:text-white w-full">
                     <VelocityScroll
                       text={service.velocityText}
