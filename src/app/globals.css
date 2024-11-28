@@ -76,3 +76,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  scrollbar-width: none;
+  overflow: hidden;
+}

@@ -1,14 +1,6 @@
 "use client";
-
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import localFont from "next/font/local";
-
-const coolVeticaRegular = localFont({
-  src: "./fonts/Coolvetica-Regular.ttf",
-  display: "swap",
-  variable: "--font-cool-reg",
-});
 
 export default function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">(
@@ -44,8 +36,8 @@ export default function Pricing() {
 
   return (
     <section
-      className={`bg-black text-white py-16 md:py-24 tracking-wider ${coolVeticaRegular.className}`}
-    >
+      style={{ fontFamily: "var(--font-cool-reg)" }}
+      className={`bg-black text-white py-16 md:py-24 tracking-wider`}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
           <div>
@@ -63,8 +55,7 @@ export default function Pricing() {
                 billingPeriod === "yearly"
                   ? "bg-white text-black"
                   : "text-gray-400"
-              }`}
-            >
+              }`}>
               Yearly
             </button>
             <button
@@ -73,8 +64,7 @@ export default function Pricing() {
                 billingPeriod === "monthly"
                   ? "bg-white text-black"
                   : "text-gray-400"
-              }`}
-            >
+              }`}>
               Monthly
             </button>
           </div>
@@ -86,8 +76,7 @@ export default function Pricing() {
               key={plan.name}
               className={`flex flex-col md:flex-row justify-between items-start md:items-center p-8 font-bold rounded-2xl ${
                 plan.highlighted ? "border border-zinc-800" : ""
-              }`}
-            >
+              }`}>
               <div className="mb-6 md:mb-0">
                 <h3 className="text-2xl font-medium mb-6">{plan.name}</h3>
                 <ul className="space-y-4">
