@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ cursor: 'url("/icons/cursor.svg"), auto' }}>
       <body
         className={`${coolVeticaRegular.variable} ${brochilloRegular.variable} antialiased`}>
         {children}
