@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Calendar } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 const formSchema = z.object({
   services: z.array(z.string()).min(1, "Please select at least one service"),
@@ -23,7 +25,7 @@ const formSchema = z.object({
   details: z.string().optional(),
 });
 
-export default function CTA() {
+export default function ConsultationForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -80,16 +82,30 @@ export default function CTA() {
   };
 
   return (
-    <section
+    <div
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className="bg-black text-white py-16 md:py-24 tracking-widest"
+      className=" flex h-full lg:h-screen bg-black items-center justify-center text-white py-12 md:py-24 tracking-widest "
     >
       <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between">
-        <h2 className=" flex text-6xl md:text-8xl font-medium mb-16 md:mb-24 items-center justify-center">
-          Let&apos;s
-          <br />
-          collaborate
-        </h2>
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="text-6xl md:text-8xl font-medium mb-16 md:mb-24 text-center">
+            Got an idea
+            <br />
+            Let&apos;s Discuss
+          </h2>
+          <div className="p-6 rounded-lg text-center mb-10">
+            <Link
+              prefetch
+              href="https://cal.com/ommishra/15min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <Calendar size={20} />
+              Book a free 15-minute call
+            </Link>
+          </div>
+        </div>
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-3xl">
@@ -202,7 +218,7 @@ export default function CTA() {
                 <FormItem className="mb-12">
                   <FormControl>
                     <Textarea
-                      placeholder="Project details (optional)"
+                      placeholder="Project etails"
                       className="w-full bg-transparent border-b border-zinc-800 rounded-none text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors resize-none min-h-[100px]"
                       {...field}
                     />
@@ -225,6 +241,6 @@ export default function CTA() {
           </form>
         </Form>
       </div>
-    </section>
+    </div>
   );
 }

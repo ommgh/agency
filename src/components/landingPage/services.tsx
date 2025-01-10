@@ -14,15 +14,15 @@ export default function Services() {
       name: "MOBILE APP DEVELOPMENT",
       velocityText: "MOBILE APP DEVELOPMENT →",
     },
-    { id: 4, name: "SEO MARKETING", velocityText: "SEO MARKETING →" },
   ];
 
   return (
     <section
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className={`bg-black text-white py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider`}>
+      className={`bg-black text-white py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider`}
+    >
       <div className="w-full h-full flex flex-col">
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-0 px-10">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-0 px-10 text-center">
           Here&apos;s What We Create
         </h2>
         <div className="p-5 sm:p-10 border-neutral-100">
@@ -36,7 +36,8 @@ export default function Services() {
                   backgroundColor:
                     hoveredService === service.id ? "#fff" : "black",
                 }}
-                transition={{ duration: 0.3 }}>
+                transition={{ duration: 0.3 }}
+              >
                 {/* Service Name */}
                 <motion.div
                   style={{ fontFamily: "var(--font-cool-reg)" }}
@@ -44,7 +45,8 @@ export default function Services() {
                   animate={{
                     opacity: hoveredService === service.id ? 0 : 1,
                   }}
-                  transition={{ duration: 0.3 }}>
+                  transition={{ duration: 0.3 }}
+                >
                   {service.name}
                 </motion.div>
 
@@ -55,7 +57,8 @@ export default function Services() {
                   animate={{
                     opacity: hoveredService === service.id ? 1 : 0,
                   }}
-                  transition={{ duration: 0.3 }}>
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="flex items-center gap-2 text-black dark:text-white w-full">
                     <VelocityScroll
                       text={service.velocityText}
