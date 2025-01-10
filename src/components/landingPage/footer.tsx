@@ -4,7 +4,8 @@ export default function Footer() {
   return (
     <footer
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className={`bg-black text-white py-16 tracking-wider`}>
+      className={`bg-black text-white py-16 tracking-wider`}
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Logo and Description */}
@@ -12,7 +13,8 @@ export default function Footer() {
             <Link
               href="/"
               style={{ fontFamily: "var(--font-broch-reg)" }}
-              className={`text-4xl font-bold tracking-tighter mb-6 block`}>
+              className={`text-4xl font-bold tracking-tighter mb-6 block`}
+            >
               sync
             </Link>
             <p className="text-xl leading-relaxed text-gray-300 mr-5">
@@ -26,22 +28,26 @@ export default function Footer() {
             <nav className="space-y-4">
               <Link
                 href="/home"
-                className="block text-gray-300 hover:text-white transition-colors">
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Home
               </Link>
               <Link
                 href="/work"
-                className="block text-gray-300 hover:text-white transition-colors">
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Work
               </Link>
               <Link
                 href="/insights"
-                className="block text-gray-300 hover:text-white transition-colors">
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Insights
               </Link>
               <Link
                 href="/about"
-                className="block text-gray-300 hover:text-white transition-colors">
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 About
               </Link>
             </nav>
@@ -52,19 +58,22 @@ export default function Footer() {
             <h3 className="text-xl font-medium mb-6">Case Studies</h3>
             <nav className="space-y-4">
               <Link
-                href="/case-studies/jefa"
-                className="block text-gray-300 hover:text-white transition-colors">
+                href="/"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 yardstoacres
               </Link>
               <Link
-                href="/case-studies/peopl"
-                className="block text-gray-300 hover:text-white transition-colors">
+                href="/"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 nexabetx
               </Link>
               <Link
-                href="/case-studies/panelista"
-                className="block text-gray-300 hover:text-white transition-colors">
-                project
+                href="/"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
+                pujegroup
               </Link>
             </nav>
           </div>
@@ -73,10 +82,9 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-xl font-medium mb-6">Address</h3>
             <address className="not-italic space-y-4">
-              <p className="text-gray-300">Marquise Square</p>
-              <p className="text-gray-300">Business Bay</p>
-              <p className="text-gray-300">Dubai</p>
-              <p className="text-gray-300">United Arab Emirates</p>
+              <p className="text-gray-300">Indore,</p>
+              <p className="text-gray-300">Madhya Pradesh,</p>
+              <p className="text-gray-300">India</p>
             </address>
           </div>
 
@@ -86,18 +94,21 @@ export default function Footer() {
             <nav className="space-y-4">
               <Link
                 href="https://instagram.com"
-                className="block text-gray-300 hover:text-white transition-colors">
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 Instagram
               </Link>
               <Link
                 href="https://linkedin.com"
-                className="block text-gray-300 hover:text-white transition-colors">
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
                 LinkedIn
               </Link>
               <Link
-                href="https://awwwards.com"
-                className="block text-gray-300 hover:text-white transition-colors">
-                Awwwards
+                href="https://x.com"
+                className="block text-gray-300 hover:text-white transition-colors"
+              >
+                X
               </Link>
             </nav>
           </div>
@@ -107,7 +118,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
           <Link
             href="/privacy"
-            className="text-gray-400 hover:text-white transition-colors mb-4 md:mb-0">
+            className="text-gray-400 hover:text-white transition-colors mb-4 md:mb-0"
+          >
             Privacy Policy
           </Link>
           <p className="text-gray-400">

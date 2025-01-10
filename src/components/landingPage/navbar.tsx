@@ -9,26 +9,30 @@ export default function Navbar() {
         <Link
           href="/"
           className={`text-5xl`}
-          style={{ fontFamily: "var(--font-broch-reg)" }}>
+          style={{ fontFamily: "var(--font-broch-reg)" }}
+        >
           sync
         </Link>
         <div className="hidden md:flex items-center gap-8">
           <Link
             href="/work"
             className={`hover:text-gray-300 transition-colors text-lg`}
-            style={{ fontFamily: "var(--font-cool-reg)" }}>
+            style={{ fontFamily: "var(--font-cool-reg)" }}
+          >
             Work
           </Link>
           <Link
             href="/insights"
             className={`hover:text-gray-300 transition-colors text-lg`}
-            style={{ fontFamily: "var(--font-cool-reg)" }}>
+            style={{ fontFamily: "var(--font-cool-reg)" }}
+          >
             Insights
           </Link>
           <Link
             href="/about"
             className={`hover:text-gray-300 transition-colors text-lg`}
-            style={{ fontFamily: "var(--font-cool-reg)" }}>
+            style={{ fontFamily: "var(--font-cool-reg)" }}
+          >
             About
           </Link>
         </div>
@@ -36,8 +40,9 @@ export default function Navbar() {
           <Link
             href="/consultation"
             className={`hidden md:inline-block rounded-full bg-white text-black px-6 py-2 hover:bg-gray-100 transition-colors`}
-            style={{ fontFamily: "var(--font-cool-reg)" }}>
-            Free consultation
+            style={{ fontFamily: "var(--font-cool-reg)" }}
+          >
+            Got an idea ?
           </Link>
           <button className="md:hidden text-white">
             <Menu size={24} />

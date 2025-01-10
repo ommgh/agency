@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 const coolVeticaRegular = localFont({
   src: "./fonts/Coolvetica-Regular.ttf",
@@ -26,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ cursor: 'url("/icons/cursor.svg"), auto' }}>
       <body
-        className={`${coolVeticaRegular.variable} ${brochilloRegular.variable} antialiased`}>
+        className={`${coolVeticaRegular.variable} ${brochilloRegular.variable} antialiased`}
+      >
         {children}
+        <Toaster />
       </body>
     </html>
   );

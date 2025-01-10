@@ -11,10 +11,10 @@ function LandingPage() {
     <>
       <Navbar />
       <Hero />
-      <CTA />
       <Services />
       <Pricing />
       <Reviews />
+      <CTA />
       <Footer />
     </>
   );
