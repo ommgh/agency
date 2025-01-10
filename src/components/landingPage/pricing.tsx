@@ -68,7 +68,7 @@ export default function Pricing() {
                   <div className="text-4xl font-medium">${plan.price}</div>
                 </div>
                 <Link href={"https://cal.com/ommishra/15min"}>
-                  <Button className="flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-800 hover:bg-zinc-800 transition-colors">
+                  <Button className="flex items-center gap-2 px-6 py-3 rounded-lg border border-zinc-800 hover:bg-zinc-800 transition-colors">
                     Get Started
                     <ArrowRight className="w-4 h-4" />
                   </Button>

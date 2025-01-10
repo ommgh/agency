@@ -59,7 +59,8 @@ export default function Reviews() {
   return (
     <section
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className={`bg-black text-white py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider`}>
+      className={`bg-black text-white py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-0">
@@ -68,14 +69,16 @@ export default function Reviews() {
           <div className="flex gap-4">
             <button
               onClick={prevSlide}
-              className="p-3 sm:p-4 rounded-full bg-zinc-900 hover:bg-zinc-800 transition-colors"
-              aria-label="Previous review">
+              className="p-3 sm:p-4 rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors"
+              aria-label="Previous review"
+            >
               <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="p-3 sm:p-4 rounded-full bg-zinc-900 hover:bg-zinc-800 transition-colors"
-              aria-label="Next review">
+              className="p-3 sm:p-4 rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors"
+              aria-label="Next review"
+            >
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
@@ -84,7 +87,8 @@ export default function Reviews() {
         <div className="overflow-hidden">
           <div
             ref={carouselRef}
-            className="flex gap-4 sm:gap-6 transition-transform duration-500 ease-in-out">
+            className="flex gap-4 sm:gap-6 transition-transform duration-500 ease-in-out"
+          >
             {/* Rating Card */}
             <div className="w-full sm:w-[350px] md:w-[400px] flex-shrink-0 p-6 sm:p-8 bg-zinc-900 rounded-2xl flex flex-col justify-between">
               <div>
@@ -108,7 +112,8 @@ export default function Reviews() {
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[350px] md:w-[400px] flex-shrink-0 p-6 sm:p-8 bg-zinc-900 rounded-2xl">
+                className="w-full sm:w-[350px] md:w-[400px] flex-shrink-0 p-6 sm:p-8 bg-zinc-900 rounded-2xl"
+              >
                 <div className="flex items-center gap-4 mb-6">
                   <Image
                     src={review.image}

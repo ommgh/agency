@@ -44,11 +44,12 @@ function Curtain({ onComplete }: { onComplete: () => void }) {
       <div className="curtain1 absolute h-screen w-screen bg-black flex justify-end items-end z-20">
         <p
           className="text-[150px] font-bold text-white"
-          style={{ fontFamily: "var(--font-cool-reg)" }}>
+          style={{ fontFamily: "var(--font-cool-reg)" }}
+        >
           {isLoading}%
         </p>
       </div>
-      <div className="curtain2 absolute h-screen w-screen bg-green-600 z-10"></div>
+      <div className="curtain2 absolute h-screen w-screen bg-orange-600 z-10"></div>
     </main>
   );
 }

@@ -16,21 +16,21 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <Link
             href="/work"
-            className={`hover:text-gray-300 transition-colors text-lg`}
+            className={`hover:text-gray-300 transition-colors text-lg font-bold tracking-widest`}
             style={{ fontFamily: "var(--font-cool-reg)" }}
           >
             Work
           </Link>
           <Link
             href="/insights"
-            className={`hover:text-gray-300 transition-colors text-lg`}
+            className={`hover:text-gray-300 transition-colors text-lg font-bold tracking-widest`}
             style={{ fontFamily: "var(--font-cool-reg)" }}
           >
             Insights
           </Link>
           <Link
             href="/about"
-            className={`hover:text-gray-300 transition-colors text-lg`}
+            className={`hover:text-gray-300 transition-colors text-lg font-bold tracking-widest`}
             style={{ fontFamily: "var(--font-cool-reg)" }}
           >
             About
@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/consultation"
-            className={`hidden md:inline-block rounded-full bg-white text-black px-6 py-2 hover:bg-gray-100 transition-colors`}
+            className={`hidden md:inline-block rounded-lg bg-white text-black px-6 py-2 hover:bg-gray-100 transition-colors`}
             style={{ fontFamily: "var(--font-cool-reg)" }}
           >
             Got an idea ?

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import PushableButton from "../PushableButton";
 
 export default function Hero() {
   return (
@@ -23,11 +24,8 @@ export default function Hero() {
       </p>
 
       <div className="relative inline-block">
-        <Link
-          href="https://cal.com/ommishra/15min"
-          className="inline-block rounded-full bg-white text-black px-6 md:px-8 py-2 md:py-3 font-medium text-base md:text-lg hover:bg-gray-100 transition-colors relative z-10"
-        >
-          Book a 15-min Call
+        <Link href="https://cal.com/ommishra/15min">
+          <PushableButton text="Book a 15-Min Call" />
         </Link>
       </div>
     </main>

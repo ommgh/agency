@@ -110,7 +110,7 @@ export default function CTA() {
                         key={service}
                         type="button"
                         onClick={() => handleServiceToggle(service)}
-                        className={`px-6 py-3 rounded-full text-sm transition-colors ${
+                        className={`px-6 py-3 rounded-lg text-sm transition-colors ${
                           form.getValues("services").includes(service)
                             ? "bg-white text-black"
                             : "bg-zinc-900 text-white hover:bg-zinc-800"
@@ -142,7 +142,7 @@ export default function CTA() {
                         key={budget}
                         type="button"
                         onClick={() => form.setValue("budget", budget)}
-                        className={`px-6 py-3 rounded-full text-sm transition-colors ${
+                        className={`px-6 py-3 rounded-lg text-sm transition-colors ${
                           form.getValues("budget") === budget
                             ? "bg-white text-black"
                             : "bg-zinc-900 text-white hover:bg-zinc-800"
