@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
+import { Button } from "../ui/button";
 
 interface Review {
   author: string;
@@ -59,7 +60,7 @@ export default function Reviews() {
   return (
     <section
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className={`bg-black text-white py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider`}
+      className={` py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider`}
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12">
@@ -67,20 +68,20 @@ export default function Reviews() {
             Hear From Our Clients
           </h2>
           <div className="flex gap-4">
-            <button
+            <Button
               onClick={prevSlide}
-              className="p-3 sm:p-4 rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors"
+              className="p-3 sm:p-4 rounded-lg text-white bg-orange-500 hover:bg-orange-600 transition-colors"
               aria-label="Previous review"
             >
               <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={nextSlide}
-              className="p-3 sm:p-4 rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors"
+              className="p-3 sm:p-4 rounded-lg text-white bg-orange-500 hover:bg-orange-600 transition-colors"
               aria-label="Next review"
             >
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -90,29 +91,31 @@ export default function Reviews() {
             className="flex gap-4 sm:gap-6 transition-transform duration-500 ease-in-out"
           >
             {/* Rating Card */}
-            <div className="w-full sm:w-[350px] md:w-[400px] flex-shrink-0 p-6 sm:p-8 bg-zinc-900 rounded-2xl flex flex-col justify-between">
+            <div className="w-full sm:w-[350px] md:w-[400px] flex-shrink-0 p-6 sm:p-8 bg-white rounded-2xl flex flex-col justify-between">
               <div>
-                <div className="text-6xl sm:text-7xl md:text-8xl font-bold mb-4 tracking-widest">
+                <div className="text-6xl text-black sm:text-7xl md:text-8xl font-bold mb-4 tracking-widest">
                   5.0
                 </div>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 sm:w-6 sm:h-6 fill-yellow-500 text-yellow-500"
+                      className="w-5 h-5 sm:w-6 sm:h-6 fill-orange-500 text-orange-500"
                     />
                   ))}
                 </div>
-                <div className="text-sm text-gray-400">Reviews</div>
+                <div className="text-sm text-black">Reviews</div>
               </div>
-              <div className="text-xl sm:text-2xl md:text-3xl">Google</div>
+              <div className="text-xl text-black sm:text-2xl md:text-3xl">
+                Google
+              </div>
             </div>
 
             {/* Review Cards */}
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[350px] md:w-[400px] flex-shrink-0 p-6 sm:p-8 bg-zinc-900 rounded-2xl"
+                className="w-full sm:w-[350px] md:w-[400px] flex-shrink-0 p-6 text-black sm:p-8 bg-white rounded-2xl"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <Image
@@ -123,10 +126,10 @@ export default function Reviews() {
                     className="rounded-full"
                   />
                   <div>
-                    <h3 className="text-lg sm:text-xl font-medium">
+                    <h3 className="text-lg sm:text-xl font-medium text-black">
                       {review.author}
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-400">
+                    <p className="text-sm sm:text-base text-black">
                       {review.role} {review.company}
                     </p>
                   </div>

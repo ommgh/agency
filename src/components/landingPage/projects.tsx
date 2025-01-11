@@ -70,7 +70,7 @@ export default function Projects() {
   return (
     <section
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className={`bg-black text-white py-16 md:py-24`}
+      className={` py-16 md:py-24`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-12">
@@ -80,20 +80,20 @@ export default function Projects() {
           <div className="flex items-center gap-4">
             <Link
               href="/work"
-              className="px-6 py-2 rounded-full bg-zinc-900 text-sm hover:bg-zinc-800 transition-colors"
+              className="px-6 py-2 rounded-full text-white bg-orange-500 text-sm hover:bg-orange-600 transition-colors"
             >
               View all
             </Link>
             <Button
               onClick={() => scroll("left")}
-              className=" hidden lg:flex p-4 rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors"
+              className=" hidden lg:flex p-4 rounded-lg text-white bg-orange-500 hover:bg-orange-600 transition-colors"
               aria-label="Previous project"
             >
               <ArrowLeft className="w-6 h-6" />
             </Button>
             <Button
               onClick={() => scroll("right")}
-              className=" hidden lg:flex p-4 rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors"
+              className=" hidden lg:flex p-4 rounded-lg text-white bg-orange-500 hover:bg-orange-600 transition-colors"
               aria-label="Next project"
             >
               <ArrowRight className="w-6 h-6" />
@@ -121,9 +121,9 @@ export default function Projects() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                <h3 className="text-xl font-medium text-black">
+                <h3 className="text-xl font-medium text-white">
                   {project.title}
                 </h3>
               </div>

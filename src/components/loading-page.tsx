@@ -27,7 +27,7 @@ export default function LoadingPage() {
   }, []);
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center bg-black">
+    <div className="relative flex h-screen w-full items-center justify-center">
       <h1
         className={`absolute text-[120px] font-bold uppercase tracking-tighter text-transparent ${brochilloRegular.className}`}
         style={{
@@ -38,7 +38,7 @@ export default function LoadingPage() {
       </h1>
 
       <h1
-        className="absolute text-[120px] font-bold uppercase tracking-tighter text-white"
+        className="absolute text-[120px] font-bold uppercase tracking-tighter"
         style={{
           clipPath: `inset(${100 - progress}% 0 0 0)`,
           transition: "clip-path 0.3s ease-in-out",
