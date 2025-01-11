@@ -3,7 +3,7 @@ import Footer from "./footer";
 import Hero from "./hero";
 import Navbar from "./navbar";
 import Pricing from "./pricing";
-import Projects from "./Projects";
+import Projects from "./projects";
 import Reviews from "./reviews";
 import Services from "./services";
 

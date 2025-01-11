@@ -65,6 +65,7 @@ export default function CTA() {
       toast({
         title: "Success!",
         description: "Thank you! We'll get back to you soon.",
+        className: "bg-orange-500 text-white",
       });
 
       form.reset();
@@ -82,7 +83,7 @@ export default function CTA() {
   return (
     <section
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className="bg-black text-white py-16 md:py-24 tracking-widest"
+      className=" py-16 md:py-24 tracking-widest"
     >
       <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between">
         <h2 className=" flex text-6xl md:text-8xl font-medium mb-16 md:mb-24 lg:items-center lg:justify-center">
@@ -112,8 +113,8 @@ export default function CTA() {
                         onClick={() => handleServiceToggle(service)}
                         className={`px-6 py-3 rounded-lg text-sm transition-colors ${
                           form.getValues("services").includes(service)
-                            ? "bg-white text-black"
-                            : "bg-zinc-900 text-white hover:bg-zinc-800"
+                            ? "bg-orange-500 text-white"
+                            : "bg-white text-black hover:bg-orange-20"
                         }`}
                       >
                         {service}
@@ -133,24 +134,22 @@ export default function CTA() {
                 <FormItem className="mb-12">
                   <label className="block text-xl mb-4">Package</label>
                   <div className="flex flex-wrap gap-3">
-                    {[
-                      "MVP Development Package",
-                      "Startup Booster Package",
-                      "Growth Retainer Package",
-                    ].map((budget) => (
-                      <button
-                        key={budget}
-                        type="button"
-                        onClick={() => form.setValue("budget", budget)}
-                        className={`px-6 py-3 rounded-lg text-sm transition-colors ${
-                          form.getValues("budget") === budget
-                            ? "bg-white text-black"
-                            : "bg-zinc-900 text-white hover:bg-zinc-800"
-                        }`}
-                      >
-                        {budget}
-                      </button>
-                    ))}
+                    {["MVP Development Package", "Growth Retainer Package"].map(
+                      (budget) => (
+                        <button
+                          key={budget}
+                          type="button"
+                          onClick={() => form.setValue("budget", budget)}
+                          className={`px-6 py-3 rounded-lg text-sm transition-colors ${
+                            form.getValues("budget") === budget
+                              ? "bg-orange-500 text-white"
+                              : "bg-white text-black hover:bg-orange-20"
+                          }`}
+                        >
+                          {budget}
+                        </button>
+                      )
+                    )}
                   </div>
                   <FormMessage />
                 </FormItem>
@@ -167,7 +166,7 @@ export default function CTA() {
                     <FormControl>
                       <Input
                         placeholder="Name"
-                        className="bg-transparent border-b border-zinc-800 rounded-none text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                        className="bg-transparent border-b border-b-foreground rounded-none text-white placeholder-foreground focus:outline-none focus:border-white transition-colors"
                         {...field}
                       />
                     </FormControl>
@@ -184,7 +183,7 @@ export default function CTA() {
                     <FormControl>
                       <Input
                         placeholder="Email"
-                        className="bg-transparent border-b border-zinc-800 rounded-none text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                        className="bg-transparent border-b border-b-foreground rounded-none text-white placeholder-foreground focus:outline-none focus:border-white transition-colors"
                         {...field}
                       />
                     </FormControl>
@@ -203,7 +202,7 @@ export default function CTA() {
                   <FormControl>
                     <Textarea
                       placeholder="Project details (optional)"
-                      className="w-full bg-transparent border-b border-zinc-800 rounded-none text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors resize-none min-h-[100px]"
+                      className="w-full bg-transparent border-b border-b-foreground rounded-none text-white placeholder-foreground focus:outline-none focus:border-none transition-colors resize-none min-h-[100px]"
                       {...field}
                     />
                   </FormControl>
@@ -217,7 +216,7 @@ export default function CTA() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="text-xl hover:text-gray-300 transition-colors"
+                className="text-xl bg-orange-500 text-white hover:bg-orange-600"
               >
                 {isSubmitting ? "submitting..." : "submit"}
               </Button>

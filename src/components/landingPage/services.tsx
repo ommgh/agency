@@ -1,10 +1,39 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { motion } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 
 export default function Services() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      touchMultiplier: 2,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+      lenis.destroy();
+    };
+  }, []);
 
   const services = [
     { id: 1, name: "UI/UX DESIGN", velocityText: "UI/UX DESIGN → " },
@@ -16,32 +45,44 @@ export default function Services() {
     },
   ];
 
+  const handleInteraction = (id: number | null) => {
+    if (!isMobile) {
+      setHoveredService(id);
+    }
+  };
+
+  const handleTouchStart = (id: number) => {
+    if (isMobile) {
+      setHoveredService(hoveredService === id ? null : id);
+    }
+  };
+
   return (
     <section
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className={`bg-black text-white py-8 sm:py-16 md:py-24 overflow-hidden tracking-wider`}
+      className="py-8 sm:py-16 md:py-24 w-full tracking-wider overflow-y-auto touch-pan-y"
     >
       <div className="w-full h-full flex flex-col">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-0 px-10 text-center">
           Here&apos;s What We Create
         </h2>
-        <div className="p-5 sm:p-10 border-neutral-100">
+        <div className="p-5 sm:p-10">
           {services.map((service) => (
             <div key={service.id} className="mb-8 relative">
               <motion.div
-                className="relative p-5 text-xl cursor-pointer group"
-                onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
+                className="relative p-5 text-xl cursor-pointer group touch-pan-y"
+                onMouseEnter={() => handleInteraction(service.id)}
+                onMouseLeave={() => handleInteraction(null)}
+                onTouchStart={() => handleTouchStart(service.id)}
                 animate={{
                   backgroundColor:
-                    hoveredService === service.id ? "#fff" : "black",
+                    hoveredService === service.id ? "#EF7014" : "#000000",
                 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Service Name */}
                 <motion.div
                   style={{ fontFamily: "var(--font-cool-reg)" }}
-                  className={`flex font-semibold items-center gap-2`}
+                  className="flex font-semibold items-center gap-2"
                   animate={{
                     opacity: hoveredService === service.id ? 0 : 1,
                   }}
@@ -50,7 +91,6 @@ export default function Services() {
                   {service.name}
                 </motion.div>
 
-                {/* Velocity Scroll Container */}
                 <motion.div
                   className="absolute inset-0 flex items-center"
                   initial={{ opacity: 0 }}
@@ -59,7 +99,7 @@ export default function Services() {
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="flex items-center gap-2 text-black dark:text-white w-full">
+                  <div className="flex items-center gap-2 text-white w-full">
                     <VelocityScroll
                       text={service.velocityText}
                       default_velocity={1.5}

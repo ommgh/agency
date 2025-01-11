@@ -32,7 +32,7 @@ export default function Component() {
       {showCurtain ? (
         <Curtain onComplete={() => setShowCurtain(false)} />
       ) : (
-        <div className="bg-black text-white">
+        <div className="min-h-screen relative flex flex-col overflow-y-hidden">
           <LandingPage />
         </div>
       )}

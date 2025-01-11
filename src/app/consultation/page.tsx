@@ -84,13 +84,12 @@ export default function ConsultationForm() {
   return (
     <div
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className=" flex h-full lg:h-screen bg-black items-center justify-center text-white py-12 md:py-24 tracking-widest "
+      className=" flex h-full lg:h-screen items-center justify-center py-12 md:py-24 tracking-widest "
     >
       <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-6xl md:text-8xl font-medium mb-16 md:mb-24 text-center">
-            Got an idea
-            <br />
+            Got an <span className="text-orange-500">Idea</span> <br />
             Let&apos;s Discuss
           </h2>
           <div className="p-6 rounded-lg text-center mb-10">
@@ -99,7 +98,7 @@ export default function ConsultationForm() {
               href="https://cal.com/ommishra/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors"
             >
               <Calendar size={20} />
               Book a free 15-minute call
@@ -128,8 +127,8 @@ export default function ConsultationForm() {
                         onClick={() => handleServiceToggle(service)}
                         className={`px-6 py-3 rounded-lg text-sm transition-colors ${
                           form.getValues("services").includes(service)
-                            ? "bg-white text-black"
-                            : "bg-zinc-900 text-white hover:bg-zinc-800"
+                            ? "bg-orange-500 text-white"
+                            : "bg-white text-black hover:bg-orange-20"
                         }`}
                       >
                         {service}
@@ -160,8 +159,8 @@ export default function ConsultationForm() {
                         onClick={() => form.setValue("budget", budget)}
                         className={`px-6 py-3 rounded-lg text-sm transition-colors ${
                           form.getValues("budget") === budget
-                            ? "bg-white text-black"
-                            : "bg-zinc-900 text-white hover:bg-zinc-800"
+                            ? "bg-orange-500 text-white"
+                            : "bg-white text-black hover:bg-orange-20"
                         }`}
                       >
                         {budget}
@@ -233,7 +232,7 @@ export default function ConsultationForm() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="text-xl hover:text-gray-300 transition-colors"
+                className="text-xl bg-orange-500 hover:bg-orange-600 transition-colors"
               >
                 {isSubmitting ? "submitting..." : "submit"}
               </Button>

@@ -2,6 +2,7 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import PushableButton from "../PushableButton";
 
 export default function Pricing() {
   const plans = [
@@ -31,7 +32,7 @@ export default function Pricing() {
   return (
     <section
       style={{ fontFamily: "var(--font-cool-reg)" }}
-      className={`bg-black text-white py-16 md:py-24 tracking-wider`}
+      className={`py-16 md:py-24 tracking-wider rounded-3xl`}
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
@@ -47,15 +48,18 @@ export default function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`flex flex-col md:flex-row justify-between items-start md:items-center p-8 font-bold rounded-2xl ${
-                plan.highlighted ? "border border-zinc-800" : ""
+              className={`flex  text-white flex-col md:flex-row justify-between items-start md:items-center p-8 font-bold rounded-2xl ${
+                plan.highlighted ? "border border-orange-500" : ""
               }`}
             >
               <div className="mb-6 md:mb-0">
                 <h3 className="text-2xl font-medium mb-6">{plan.name}</h3>
                 <ul className="space-y-4">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="text-gray-500">
+                    <li
+                      key={featureIndex}
+                      className="text-white tracking-widest"
+                    >
                       <CheckCircle className="w-6 h-6 inline-block mr-2" />
                       {feature}
                     </li>
@@ -65,13 +69,10 @@ export default function Pricing() {
 
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
                 <div className="text-center md:text-left">
-                  <div className="text-4xl font-medium">${plan.price}</div>
+                  <div className="text-6xl font-medium">${plan.price}</div>
                 </div>
                 <Link href={"https://cal.com/ommishra/15min"}>
-                  <Button className="flex items-center gap-2 px-6 py-3 rounded-lg border border-zinc-800 hover:bg-zinc-800 transition-colors">
-                    Get Started
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
+                  <PushableButton text="Get Started" />
                 </Link>
               </div>
             </div>
