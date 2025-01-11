@@ -15,8 +15,8 @@ const brochilloRegular = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "sync",
-  description: "sync: the best development agency",
+  title: "Synapse",
+  description: "Synapse: the best development agency",
 };
 
 export default function RootLayout({

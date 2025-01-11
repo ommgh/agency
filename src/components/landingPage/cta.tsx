@@ -85,7 +85,7 @@ export default function CTA() {
       className="bg-black text-white py-16 md:py-24 tracking-widest"
     >
       <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between">
-        <h2 className=" flex text-6xl md:text-8xl font-medium mb-16 md:mb-24 items-center justify-center">
+        <h2 className=" flex text-6xl md:text-8xl font-medium mb-16 md:mb-24 lg:items-center lg:justify-center">
           Let&apos;s
           <br />
           collaborate

@@ -3,6 +3,7 @@ import Footer from "./footer";
 import Hero from "./hero";
 import Navbar from "./navbar";
 import Pricing from "./pricing";
+import Projects from "./Projects";
 import Reviews from "./reviews";
 import Services from "./services";
 
@@ -12,6 +13,7 @@ function LandingPage() {
       <Navbar />
       <Hero />
       <Services />
+      <Projects />
       <Pricing />
       <Reviews />
       <CTA />
