@@ -32,7 +32,7 @@ export default function Component() {
       {showCurtain ? (
         <Curtain onComplete={() => setShowCurtain(false)} />
       ) : (
-        <div className="content bg-black overflow-y-auto text-white">
+        <div className="bg-black text-white">
           <LandingPage />
         </div>
       )}

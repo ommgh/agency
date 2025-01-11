@@ -8,10 +8,10 @@ export default function Navbar() {
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between">
         <Link
           href="/"
-          className={`text-5xl`}
+          className={`text-4xl`}
           style={{ fontFamily: "var(--font-broch-reg)" }}
         >
-          sync
+          synapse
         </Link>
         <div className="hidden md:flex items-center gap-8">
           <Link

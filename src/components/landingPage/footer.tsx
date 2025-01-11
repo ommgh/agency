@@ -13,9 +13,9 @@ export default function Footer() {
             <Link
               href="/"
               style={{ fontFamily: "var(--font-broch-reg)" }}
-              className={`text-4xl font-bold tracking-tighter mb-6 block`}
+              className={`text-4xl font-bold tracking-wide mb-6 block`}
             >
-              sync
+              synapse
             </Link>
             <p className="text-xl leading-relaxed text-gray-300 mr-5">
               Tech agency, based in India shiping for the world.
