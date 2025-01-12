@@ -9,21 +9,39 @@ export default function Component() {
   const [showCurtain, setShowCurtain] = useState(true);
 
   useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time: number) => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
-    };
+    }
+
     requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   useEffect(() => {
     const tl = gsap.timeline();
-    tl.fromTo(".curtain", { opacity: 1 }, { opacity: 0, duration: 1 });
-    tl.fromTo(
+
+    document.body.style.overflow = "hidden";
+
+    tl.fromTo(".curtain", { opacity: 1 }, { opacity: 0, duration: 1 }).fromTo(
       ".content",
       { opacity: 0 },
-      { opacity: 1, duration: 2, ease: "power1.out" }
+      {
+        opacity: 1,
+        duration: 2,
+        ease: "power1.out",
+        onComplete: () => {
+          document.body.style.overflow = "unset";
+        },
+      }
     );
   }, []);
 
@@ -32,7 +50,7 @@ export default function Component() {
       {showCurtain ? (
         <Curtain onComplete={() => setShowCurtain(false)} />
       ) : (
-        <div className="min-h-screen relative flex flex-col overflow-y-hidden">
+        <div className="min-h-screen relative flex flex-col">
           <LandingPage />
         </div>
       )}
