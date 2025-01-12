@@ -2,38 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { motion } from "framer-motion";
-import Lenis from "@studio-freight/lenis";
 
 export default function Services() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      touchMultiplier: 2,
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-      lenis.destroy();
-    };
-  }, []);
 
   const services = [
     { id: 1, name: "UI/UX DESIGN", velocityText: "UI/UX DESIGN → " },
@@ -66,7 +38,7 @@ export default function Services() {
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-0 px-10 text-center">
           Here&apos;s What We Create
         </h2>
-        <div className="p-5 sm:p-10">
+        <div className="p-5 sm:p-10 select-none">
           {services.map((service) => (
             <div key={service.id} className="mb-8 relative">
               <motion.div

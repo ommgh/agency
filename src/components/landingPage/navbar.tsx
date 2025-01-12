@@ -97,7 +97,9 @@ export default function Navbar() {
             </Link>
           </div>
           <div className=" p-4">
-            <PushableButton text="Let's Talk" />
+            <Link href="https://cal.com/ommishra/15min">
+              <PushableButton text="Let's Talk" />
+            </Link>
           </div>
         </div>
       )}
