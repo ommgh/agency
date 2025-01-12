@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import PushableButton from "@/components/PushableButton";
-import { Spotlight } from "@/components/ui/Sotlight";
 
 export default function Hero() {
   return (

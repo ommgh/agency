@@ -5,14 +5,12 @@ import Navbar from "./navbar";
 import Pricing from "./pricing";
 import Projects from "./projects";
 import Reviews from "./reviews";
-import Services from "./services";
 
 function LandingPage() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Services />
       <Projects />
       <Pricing />
       <Reviews />
