@@ -1,56 +1,106 @@
-import { Menu } from "lucide-react";
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import ShinyButton from "../ui/shiny-button";
+import { Calendar, Menu, X } from "lucide-react";
+import PushableButton from "../PushableButton";
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
   return (
     <div className="">
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between">
         <Link
           href="/"
-          className={`text-4xl`}
+          className="text-4xl"
           style={{ fontFamily: "var(--font-broch-reg)" }}
         >
           synapse
         </Link>
+
         <div className="hidden md:flex items-center gap-8">
           <Link
             href="/work"
-            className={`hover:text-orange-500 transition-colors text-lg font-bold tracking-widest`}
+            className="hover:text-orange-500 transition-colors text-lg font-bold tracking-widest"
             style={{ fontFamily: "var(--font-cool-reg)" }}
           >
             Work
           </Link>
           <Link
             href="/insights"
-            className={`hover:text-orange-500 transition-colors text-lg font-bold tracking-widest`}
+            className="hover:text-orange-500 transition-colors text-lg font-bold tracking-widest"
             style={{ fontFamily: "var(--font-cool-reg)" }}
           >
             Insights
           </Link>
           <Link
             href="/about"
-            className={`hover:text-orange-500 transition-colors text-lg font-bold tracking-widest`}
+            className="hover:text-orange-500 transition-colors text-lg font-bold tracking-widest"
             style={{ fontFamily: "var(--font-cool-reg)" }}
           >
             About
           </Link>
         </div>
-        <div className="flex items-center gap-4">
+
+        <div className="hidden md:flex items-center gap-4">
           <Link href="/consultation">
             <ShinyButton
               style={{ fontFamily: "var(--font-cool-reg)" }}
-              className="hidden md:inline-block font-bold tracking-widest rounded-lg bg-white text-xl text-black px-6 py-2"
+              className="font-bold tracking-widest rounded-lg px-6 py-2"
             >
               Got an idea ?
             </ShinyButton>
           </Link>
-          <button className="md:hidden text-black">
-            <Menu size={24} />
-          </button>
         </div>
+
+        <button
+          onClick={toggleMobileMenu}
+          className="md:hidden text-2xl focus:outline-none"
+        >
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden min-h-screen">
+          <div className="flex flex-col items-start px-4 py-4 gap-4">
+            <Link
+              href="/work"
+              className="hover:text-orange-500 transition-colors text-3xl font-bold tracking-widest"
+              style={{ fontFamily: "var(--font-cool-reg)" }}
+            >
+              Work
+            </Link>
+            <Link
+              href="/insights"
+              className="hover:text-orange-500 transition-colors text-3xl font-bold tracking-widest"
+              style={{ fontFamily: "var(--font-cool-reg)" }}
+            >
+              Insights
+            </Link>
+            <Link
+              href="/about"
+              className="hover:text-orange-500 transition-colors text-3xl font-bold tracking-widest"
+              style={{ fontFamily: "var(--font-cool-reg)" }}
+            >
+              About
+            </Link>
+          </div>
+          <div className=" p-4">
+            <PushableButton text="Let's Talk" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const coolVeticaRegular = localFont({
   src: "./fonts/Coolvetica-Regular.ttf",
@@ -29,7 +30,14 @@ export default function RootLayout({
       <body
         className={`${coolVeticaRegular.variable} ${brochilloRegular.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute={"class"}
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
         <Toaster />
       </body>
     </html>

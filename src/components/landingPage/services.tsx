@@ -76,7 +76,7 @@ export default function Services() {
                 onTouchStart={() => handleTouchStart(service.id)}
                 animate={{
                   backgroundColor:
-                    hoveredService === service.id ? "#EF7014" : "#000000",
+                    hoveredService === service.id ? "#EF7014" : "transparent",
                 }}
                 transition={{ duration: 0.3 }}
               >
