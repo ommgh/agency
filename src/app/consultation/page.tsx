@@ -98,7 +98,7 @@ export default function ConsultationForm() {
               href="https://cal.com/ommishra/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors"
             >
               <Calendar size={20} />
               Book a free 15-minute call
@@ -232,7 +232,7 @@ export default function ConsultationForm() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="text-xl bg-orange-500 hover:bg-orange-600 transition-colors"
+                className="text-xl bg-orange-600 hover:bg-orange-700 transition-colors text-white"
               >
                 {isSubmitting ? "submitting..." : "submit"}
               </Button>
